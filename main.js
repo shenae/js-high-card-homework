@@ -11,21 +11,32 @@ function buildDeck(arr1, arr2) {
 			deck.push(card);
 		}
 	}
-	console.log(deck);
+	// console.log(deck);
 	return deck;
 }
-//write function that jack = 10 etc
-//math.random or shuffle deck to give cards
+//math.random and splice to remove 2 cards from deck
 function dealCardsToPlayers() {
+	let removeCards = (Math.random(deck.splice(deck.length -3, 2)));
+	return removeCards;
 }
-//Player 1 got card Player 2 got card
+//Player 1 is showing card whatever
+//Player 2 is showing card whatever
 function announceCards() {
-}
 
+}
+//To make things simpler on us, let's write the `cardToRank()` function which accepts a card and returns an integer "rank" for it. A card's rank will be a number between 2 and 14, based on the card's value. A `2 of Spades` will have a rank of `2`, `6 of Hearts` will have a rank of `6`. For face cards, the ranks should be: `Jack = 11, Queen = 12, King = 13, Ace = 14`.
 function cardToRank(card) {
 }
 //which player wins
 function announceWinner() {
+	if(player1Card > player2Card){
+		console.log('Player 1 wins!!');
+	} else if(player2Card > player1Card) {
+		console.log('Player 2 wins!!');
+	} else {
+		console.log('It\'s a tie!!');
+	}
+
 }
 
 function returnCardsToDeck() {
@@ -40,3 +51,5 @@ function playGame() {
 
 buildDeck(values, suits);
 playGame();
+
+//Bonus: Keep track of how many games each player won. Log out the current score after each game. Maybe local storage
