@@ -16,13 +16,18 @@ function buildDeck(arr1, arr2) {
 }
 //math.random and splice to remove 2 cards from deck
 function dealCardsToPlayers() {
-	let removeCards = (Math.random(deck.splice(deck.length -3, 2)));
-	return removeCards;
+	let removeCards1 = (Math.random(deck.splice(deck.length -3, 1)));
+	let removeCards2 = (Math.random(deck.splice(deck.length -2, 1)));
+	return removeCards1;
+	return removeCards2;
 }
 //Player 1 is showing card whatever
 //Player 2 is showing card whatever
 function announceCards() {
-
+	let player1Card = removeCards1;
+	let player2Card = removeCards2; 
+	console.log('Player 1 is showing ' + player1Card);
+	console.log('Player 2 is showing ' + player2Card);
 }
 //To make things simpler on us, let's write the `cardToRank()` function which accepts a card and returns an integer "rank" for it. A card's rank will be a number between 2 and 14, based on the card's value. A `2 of Spades` will have a rank of `2`, `6 of Hearts` will have a rank of `6`. For face cards, the ranks should be: `Jack = 11, Queen = 12, King = 13, Ace = 14`.
 function cardToRank(card) {
@@ -39,7 +44,7 @@ function announceWinner() {
 
 }
 
-function returnCardsToDeck() {
+function returnCardsToDeck()
 }
 
 function playGame() {
